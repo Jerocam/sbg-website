@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital@1&family=Mukta:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+// Font Variables
+$font_body: 'Mukta', sans-serif;
+$font_main: 'Kanit', sans-serif;
+$font_h1: 'Bebas Neue', cursive;
+
+// Color variables
+$color_wsmoke: whitesmoke;
+$color_nav: to right, #ff8008, #ffc837;
+$color_bg_btn: #24C6DC;
+$color_bg_btn_gradient: to right, #514A9D, #24C6DC;
+$color_bg_btn2:#0F2027;   
+$color_bg_btn2_gradient: to right, #2C5364, #203A43, #0F2027;
+$color_black:#000000;
+$color_fa_bg_fb: #0575E6;
+$color_fa_fb: to right, #021B79, #0575E6;
+$color_fa_bg_tw: #2193b0;
+$color_fa_tw: to right, #6dd5ed, #2193b0;
+$color_fa_bg_yt: #ED213A;
+$color_fa_yt: to right, #93291E, #ED213A;
+$color_fa_bg_in: #833ab4;
+$color_fa_in: to right, #fcb045, #fd1d1d, #833ab4;
+
+// variable none
+$none: none;
+
+// group variables
+@mixin sizes ($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin margPadd ($margin, $padding) {
+    margin: $margin;
+    padding: $padding;
+}
+
+@mixin display ($display){
+    display: $display;
+}
+
+@mixin justify ($justify){
+    justify-content:$justify;
+}
+
+@mixin font_style ($fontSize, $fontWei){
+    font-size: $fontSize;
+    font-weight: $fontWei;
+}
+
+@mixin position ($t, $b, $r, $l){
+    top: $t;
+    left: $l;
+    bottom: $b;
+    right: $r;
+}
+@mixin both_nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex: 1 0 30vw;
+}
+@mixin gradient_bg ($bg_color, $bg_gradient) {
+    background: $bg_color;
+    background: -webkit-linear-gradient($bg_gradient);
+    background: linear-gradient($bg_gradient);
+}
+
+//CONDITION FOR MEDIA QUERIES
+@mixin mediaScreen($class) {
+    @if $class == sm {
+        @media (max-width: 459px) { @content; }
+    }
+    @else if $class == md {
+        @media (max-width: 767px) { @content; }
+    }
+    @else if $class == lg {
+        @media (max-width: 959px) { @content; }
+    }
+    @else if $class == xlg {
+        @media (max-width: 1200px) { @content; }
+    }
+    @else {
+        @warn "mediaScreen mixin supports: xs, sm, md, lg";
+    }
+}
+
+// html
+html { background: url(../images/bg-gally.png);}
+// Body
+body {color: $color_wsmoke; font-family: $font_body; display: $none;}
+
+// Navigation
+.nav-flex {
+    @include display(flex); @include justify(space-between); align-items: center; margin-top: 5em;
+    li a {
+        text-decoration: none; color: $color_wsmoke; @include font_style(1.4em, 600); position: relative; z-index: 1; @include margPadd(0 30px, 0.2em 1em);}
+    li a, li a:after, li a:before{
+        transition: 0.5s; -webkit-transition: 0.5s; -moz-transition: 0.5s; -ms-transition: 0.5s; -o-transition: 0.5s;}
+    li a:after{
+        @include display(block); position: absolute; @include position(0,0,0,0); margin: auto; @include sizes(100%,1px); content: '.'; color: transparent; background: linear-gradient($color_nav); visibility: $none; opacity: 0; z-index: -1;}
+    li a:hover:after {
+        opacity: 1; visibility: visible; height: 100%;}
+}
+.left-nav {
+    @include both_nav(); @include justify(flex-end);
+}
+.right-nav {
+    @include both_nav(); @include justify(flex-start);
+}
+.logo-nav {
+    flex: 0 1 20vw; text-align: center;
+    img { width: 300px; }
+}
+
+// Main - Homepage
+.grid {@include display(grid); grid-template-columns: auto auto auto; grid-gap: 10px; margin-top: 2em;
+    > div { text-align: center; padding: 20px 0;}
+}
+.left-tri img { float: left;}
+.right-tri img { float: right;}
+.center-main { margin-top: 4em;
+    h2 { font-family: $font_main; font-size: 2.5em;}
+    .h1-style { font-family: $font_h1; font-size: 7em; background: linear-gradient($color_nav); -webkit-background-clip: text;-webkit-text-fill-color: transparent;}
+    .btn-start a { text-decoration: $none; font-size: 1.4em; margin-top: 1em; }
+    .btn-style { border: $none; @include gradient_bg($color_bg_btn, $color_bg_btn_gradient); color: $color_wsmoke !important; font-weight: 100; padding: 20px; text-transform: uppercase; border-radius: 6px; -webkit-border-radius: 6px; -moz-border-radius: 6px; -ms-border-radius: 6px; -o-border-radius: 6px; @include display(inline-block); transition: all 0.3s ease 0s; -webkit-transition: all 0.3s ease 0s; -moz-transition: all 0.3s ease 0s; -ms-transition: all 0.3s ease 0s; -o-transition: all 0.3s ease 0s;} 
+    .btn-style:hover { color: #ffffff !important; font-weight: 700 !important; letter-spacing: 3px; @include gradient_bg($color_bg_btn2, $color_bg_btn2_gradient);  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);transition: all 0.3s ease 0s; }
+    
+}
+
+/* Footer */
+/* Social-media buttons*/
+.fa-homepage { @include margPadd(5px 8px,15px); font-size:25px; width:30px; text-align: center; text-decoration: $none; border-radius: 36px; -webkit-border-radius: 36px; -moz-border-radius: 36px; -ms-border-radius: 36px; -o-border-radius: 36px;} 
+.fa-homepage:hover { background: $color_wsmoke !important; color: $color_black;}
+.fah { color: white; transition: 1s; -webkit-transition: 1s; -moz-transition: 1s; -ms-transition: 1s; -o-transition: 1s; }
+.fa-facebook { @include gradient_bg($color_fa_bg_fb, $color_fa_fb); }
+.fa-twitter { @include gradient_bg($color_fa_bg_tw, $color_fa_tw); }
+.fa-youtube { @include gradient_bg($color_fa_bg_yt, $color_fa_yt); }
+.fa-instagram { @include gradient_bg($color_fa_bg_in, $color_fa_in);}
+.social-media{ padding-bottom: 1em;}
+.footer{ position: fixed;left: 0;bottom: 0;width: 100%;text-align: center;padding-bottom: 1em;}

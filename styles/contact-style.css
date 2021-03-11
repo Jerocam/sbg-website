@@ -1,0 +1,46 @@
+.grid-contact {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;
+}
+.grid-item-contact img{
+  transition: transform 0.25s ease;
+  cursor: zoom-in;
+  max-width: 800px;
+  float: right;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox]:checked ~ label > img {
+  transform: scale(1.5);
+  cursor: zoom-out;
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+}
+
+.grid-contact h3{
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+.grid-item-contact {
+  padding: 10px;
+}
+.div-continfo{
+  padding-top: 10px;
+}
+.div-continfo p{
+  padding-bottom: 25px;
+  font-size: 25px;
+}
