@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/next-page.css">
+        <link rel="stylesheet" href="css/mobile.css">
         <link rel="stylesheet" href="styles/normalize.css">
     </head>
 <body class="bg-next">
@@ -19,7 +20,21 @@
             <a href="news.html"><i class="fa fa-user"></i> NEWS</a> 
             <a class="active" href="contact.html"><i class="fa fa-envelope"></i> CONTACT</a>
         </nav>
-        <header class="ab">
+        <div class="mobile-container">
+            <div class="topnav">
+                <img src="images/logo-sbg.png"/>
+                <div id="sbg-links">
+                    <a class="transition" href="index.html">HOME</a>
+                    <a class="transition" href="about.html">ABOUT</a>
+                    <a class="transition" href="news.html">NEWS</a>
+                    <a class="transition active" href="contact.html">CONTACT</a>
+                </div>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <header class="ab cont-bg">
             <h1>CONTACT US</h1>
             <p>Every day, The Student Body Goverment of Gallaudet University is contacted by people from all over the world!<br>We are more than happy to talk with you! 
             </p>
@@ -68,5 +83,6 @@
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/page-jquery.js"></script>
+    <script src="js/mobile-menu.js"></script>
 </body>
 </html>

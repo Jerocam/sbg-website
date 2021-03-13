@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/next-page.css">
+        <link rel="stylesheet" href="css/mobile.css">
         <link rel="stylesheet" href="styles/normalize.css">
     </head>
 <body class="bg-next">
@@ -19,7 +20,21 @@
             <a class="active" href="news.html"><i class="fa fa-user transition"></i> NEWS</a> 
             <a href="contact.html"><i class="fa fa-envelope transition"></i> CONTACT</a>
         </nav>
-        <header class="ab">
+        <div class="mobile-container">
+            <div class="topnav">
+                <img src="images/logo-sbg.png"/>
+                <div id="sbg-links">
+                    <a class="transition" href="index.html">HOME</a>
+                    <a class="transition" href="about.html">ABOUT</a>
+                    <a class="transition active" href="news.html">NEWS</a>
+                    <a class="transition" href="contact.html">CONTACT</a>
+                </div>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <header class="ab news-bg">
             <h1>SBG NEWS</h1>
             <p>We, the sbg team give you best services to have good time and great memories ever in your student life.<br>
                 Click a button below for more info
@@ -28,15 +43,15 @@
     </div>
 
     <div class="grid-buttons">
-      <div class="grid-btn">
-        <button id="btn-annou"><i class="fa fa-newspaper-o"></i><br> ANNOUNCEMENTS</button>
-      </div>
-      <div class="grid-btn">
-        <button id="btn-events"><i class="fa fa-th-list"></i><br>EVENTS</button>
-      </div>
-      <div class="grid-btn">
-        <button id="btn-gallery"><i class="fa fa-th-large"></i><br>GALLERY</button>
-      </div>
+        <div class="grid-btn">
+            <button id="btn-annou"><i class="fa fa-newspaper-o"></i><br> ANNOUNCEMENTS</button>
+        </div>
+        <div class="grid-btn">
+            <button id="btn-events"><i class="fa fa-th-list"></i><br>EVENTS</button>
+        </div>
+        <div class="grid-btn">
+            <button id="btn-gallery"><i class="fa fa-th-large"></i><br>GALLERY</button>
+        </div>
     </div>
     
     <!-- under construction -->
@@ -68,6 +83,7 @@
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/page-jquery.js"></script>
+    <script src="js/mobile-menu.js"></script>
     <script src="js/news.js"></script>
 </body>
 </html>

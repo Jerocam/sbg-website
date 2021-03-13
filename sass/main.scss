@@ -7,13 +7,17 @@ $font_main: 'Kanit', sans-serif;
 $font_h1: 'Bebas Neue', cursive;
 
 // Color variables
+$color_orange:#ff8008;
+$color_yellow:#ffc837;
+$color_black:#000000;
+$color_bg_blue: #000046;
+$color_bg_gblue: to left, #1CB5E0, #000046;
 $color_wsmoke: whitesmoke;
 $color_nav: to right, #ff8008, #ffc837;
 $color_bg_btn: #24C6DC;
 $color_bg_btn_gradient: to right, #514A9D, #24C6DC;
 $color_bg_btn2:#0F2027;   
 $color_bg_btn2_gradient: to right, #2C5364, #203A43, #0F2027;
-$color_black:#000000;
 $color_fa_bg_fb: #0575E6;
 $color_fa_fb: to right, #021B79, #0575E6;
 $color_fa_bg_tw: #2193b0;
@@ -69,23 +73,19 @@ $none: none;
     background: linear-gradient($bg_gradient);
 }
 
-//CONDITION FOR MEDIA QUERIES
-@mixin mediaScreen($class) {
-    @if $class == sm {
-        @media (max-width: 459px) { @content; }
-    }
-    @else if $class == md {
-        @media (max-width: 767px) { @content; }
-    }
-    @else if $class == lg {
-        @media (max-width: 959px) { @content; }
-    }
-    @else if $class == xlg {
-        @media (max-width: 1200px) { @content; }
-    }
-    @else {
-        @warn "mediaScreen mixin supports: xs, sm, md, lg";
-    }
+@mixin transform-style ($t-style) {
+    transform: $t-style;
+    -webkit-transform: $t-style;
+    -moz-transform: $t-style;
+    -ms-transform: $t-style;
+    -o-transform: $t-style;
+}
+@mixin transition-style ($ts-style) {
+    transition: $ts-style;
+    -webkit-transition: $ts-style;
+    -moz-transition: $ts-style;
+    -ms-transition: $ts-style;
+    -o-transition: $ts-style;
 }
 
 // html

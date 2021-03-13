@@ -61,6 +61,9 @@
   background: url("../images/2048.png") no-repeat; }
 
 /* sliders - about page */
+.c2 {
+  margin: 6vmin 40vmin !important; }
+
 .container {
   display: flex;
   justify-content: center;
@@ -72,8 +75,6 @@
   -moz-transform: skew(4deg);
   -ms-transform: skew(4deg);
   -o-transform: skew(4deg); }
-  .container .c2 {
-    padding: 0 20vmax; }
   .container .card {
     flex: 1;
     height: 70vmin;
