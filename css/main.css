@@ -183,9 +183,6 @@ body {
   padding-bottom: 1em; }
 
 .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
   width: 100%;
   text-align: center;
-  padding-bottom: 1em; }
+  margin-top: 3vw; }

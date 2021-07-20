@@ -141,4 +141,4 @@ body {color: $color_wsmoke; font-family: $font_body; display: $none;}
 .fa-youtube { @include gradient_bg($color_fa_bg_yt, $color_fa_yt); }
 .fa-instagram { @include gradient_bg($color_fa_bg_in, $color_fa_in);}
 .social-media{ padding-bottom: 1em;}
-.footer{ position: fixed;left: 0;bottom: 0;width: 100%;text-align: center;padding-bottom: 1em;}
+.footer{ width: 100%;text-align: center; margin-top: 3vw;}
